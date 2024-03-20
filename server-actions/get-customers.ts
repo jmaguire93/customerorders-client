@@ -6,7 +6,7 @@ import { getErrorMessage } from '@/utils'
 export default async function getCustomers(search: string) {
   try {
     const res = await fetch(
-      `http://localhost:8085/customer/list?search=${search}`
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/customer/list?search=${search}`
     )
     const data = ((await res.json()) || []) as Customer[]
 

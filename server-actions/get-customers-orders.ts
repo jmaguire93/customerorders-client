@@ -6,7 +6,7 @@ import { getErrorMessage } from '@/utils'
 export default async function getOrdersForCustomer(customerId: number) {
   try {
     const res = await fetch(
-      `http://localhost:8085/order/list?customer=${customerId}`
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/order/list?customer=${customerId}`
     )
     const data = ((await res.json()) || []) as Order[]
 

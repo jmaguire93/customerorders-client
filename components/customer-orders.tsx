@@ -8,7 +8,7 @@ export default function CustomerOrders() {
   const { customerOrders, selectedCustomer, loading } = useCustomerOrders()
 
   return (
-    <div className='p-3 overflow-y-auto max-h-[20rem] sm:max-h-full'>
+    <div className='p-3 overflow-y-auto max-h-[20rem] sm:max-h-full w-full border bg-gray-200'>
       {selectedCustomer ? (
         <>
           <div className='mb-4 text-lg font-semibold'>

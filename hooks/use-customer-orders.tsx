@@ -4,6 +4,7 @@ import { useCustomerContext } from '@/contexts/customer-context-provider'
 import getOrdersForCustomer from '@/server-actions/get-customers-orders'
 import type { Order } from '@/types'
 import { useEffect, useState } from 'react'
+import toast from 'react-hot-toast'
 
 export default function useCustomerOrders() {
   const { selectedCustomer } = useCustomerContext()
@@ -25,7 +26,7 @@ export default function useCustomerOrders() {
 
       if (error) {
         // throw toast
-        console.log(error)
+        toast.error(error)
       }
 
       setCustomerOrders(data)

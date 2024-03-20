@@ -4,6 +4,7 @@ import { useCustomerContext } from '@/contexts/customer-context-provider'
 import getCustomers from '@/server-actions/get-customers'
 import type { Customer } from '@/types'
 import { useEffect, useState } from 'react'
+import toast from 'react-hot-toast'
 
 export default function useCustomers() {
   const [customers, setCustomers] = useState<Customer[] | undefined>(undefined)
@@ -18,8 +19,7 @@ export default function useCustomers() {
       const { data, error } = await getCustomers(search)
 
       if (error) {
-        // throw toast
-        console.log(error)
+        toast.error(error)
       }
 
       setLoading(false)
