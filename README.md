@@ -11,5 +11,3 @@ First, install the project dependencies, then run the development server:
 npm install
 npm run dev
 ```
-
-For local development, the `customerorders-api` API will need to be running on `http://localhost:8085`.
