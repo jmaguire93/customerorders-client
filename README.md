@@ -1,7 +1,7 @@
 # Customer Orders CLIENT
 A simple Next.js web application responsible for displaying customers and their orders from a Customer Orders API
 
-Just a little side project for practicing my React, Next.js and Tailwind CSS skills.
+Just a little side project for practicing my React, Next.js, React Query and Tailwind CSS skills.
 
 ## Getting Started
 

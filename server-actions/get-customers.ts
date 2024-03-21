@@ -8,12 +8,17 @@ export default async function getCustomers(search: string) {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/customer/list?search=${search}`
     )
-    const data = ((await res.json()) || []) as Customer[]
+    const results = (await res.json()) as Customer[]
 
-    return { data }
+    // Serialize tasks to plain objects
+    return results.map((customer) => ({
+      id: customer.id,
+      name: customer.name,
+      address: customer.address,
+      email: customer.email,
+      created_at: customer.created_at
+    })) as unknown as Customer[]
   } catch (error) {
-    return {
-      error: getErrorMessage(error)
-    }
+    throw new Error(getErrorMessage(error))
   }
 }
